@@ -15,9 +15,9 @@ export default createStore({
     },
   },
   actions: {
-    incrementAsync(context, payload) {
+    incrementAsync({ commit }, payload) {
       setTimeout(() => {
-        context.commit('add', payload)
+        commit('add', payload)
       }, payload.delay)
     }
   },
