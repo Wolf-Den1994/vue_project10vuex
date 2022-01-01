@@ -12,6 +12,13 @@ export default createStore({
     },
     add(state, payload) {
       state.counter += payload.value
+    },
+  },
+  actions: {
+    incrementAsync(context, payload) {
+      setTimeout(() => {
+        context.commit('add', payload)
+      }, payload.delay)
     }
   },
   getters: {
