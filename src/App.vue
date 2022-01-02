@@ -19,15 +19,13 @@ import TheNavbar from './TheNavbar'
 export default {
   components: {TheNavbar},
   methods: {
-    ...mapMutations({ add: 'increment' }),
-    ...mapActions(['incrementAsync'])
-    // incrementAsync() {
-    //   this.$store.dispatch('incrementAsync', {
-    //     value: 10,
-    //     delay: 250
-    //   })
-    // }
+    ...mapMutations({ add: 'count/increment' }),
+    ...mapActions('count', ['incrementAsync'])
   },
-  computed: mapGetters(['counter', 'doubleCounter', 'upperCaseTitle'])
+  // computed: mapGetters(['counter', 'doubleCounter', 'upperCaseTitle']),
+  computed: {
+    ...mapGetters(['upperCaseTitle']),
+    ...mapGetters('count', ['counter', 'doubleCounter'])
+  }
 }
 </script>

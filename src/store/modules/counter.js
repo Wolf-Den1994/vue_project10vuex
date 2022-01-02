@@ -1,4 +1,5 @@
 export default {
+  namespaced: true,
   state() {
     return {
       counter: 1
@@ -26,7 +27,7 @@ export default {
       // }
       return state.counter
     },
-    doubleCounter(_, getters) {
+    doubleCounter(_, getters, rootState, rootGetters) {
       return getters.counter * 2
     }
   }
