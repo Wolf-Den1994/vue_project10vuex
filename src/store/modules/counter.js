@@ -1,6 +1,4 @@
-import { createStore } from 'vuex';
-
-export default createStore({
+export default {
   state() {
     return {
       counter: 1
@@ -32,4 +30,4 @@ export default createStore({
       return getters.counter * 2
     }
   }
-})
+}
